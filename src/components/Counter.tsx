@@ -110,7 +110,7 @@ export default function Counter() {
         : "٠";
 
     return (
-        <div className="flex flex-col items-center justify-center gap-20 w-full relative h-[60vh] max-h-[600px]">
+        <div className="flex flex-col items-center justify-center gap-10 md:gap-20 w-full relative h-[50vh] md:h-[60vh] max-h-[600px]">
 
             {/* العداد العملاق */}
             <div className="relative flex flex-col items-center z-10 w-full">
@@ -142,7 +142,7 @@ export default function Counter() {
             </div>
 
             {/* زر التفاعل السينمائي */}
-            <div className="relative z-20 flex flex-col items-center mt-auto md:mt-10">
+            <div className="relative z-20 flex flex-col items-center mt-4 md:mt-10">
                 <motion.button
                     onClick={handleClick}
                     animate={controls}
