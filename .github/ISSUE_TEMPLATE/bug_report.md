@@ -1,31 +1,32 @@
 ---
-name: تقرير عن خطأ (Bug Report)
-about: أنشئ هذا التقرير لمساعدتنا في تحسين النظام وحل الأخطاء.
+name: Bug Report
+about: Create a report to help us improve Salawat App
 title: "[BUG] "
 labels: bug
 assignees: ''
+
 ---
 
-**وصف الخطأ (Describe the bug)**
-اكتب وصفاً واضحاً وموجزاً عن طبيعة الخطأ الذي واجهته.
+**Describe the bug**
+A clear and concise description of what the bug is.
 
-**كيفية تكرار الخطأ (To Reproduce)**
-خطوات الوصول إلى المشكلة:
-1. اذهب إلى الرابط '...'
-2. اضغط على '....'
-3. قم بالتمرير إلى '....'
-4. سترى الخطأ كالتالي...
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
-**السلوك المتوقع (Expected behavior)**
-اكتب وصفاً واضحاً لما كنت تتوقع أن يحدث بدلاً من الخطأ.
+**Expected behavior**
+A clear and concise description of what you expected to happen.
 
-**لقطات شاشة (Screenshots)**
-إذا كان ذلك ممكناً، أرفق لقطات شاشة لتوضيح المشكلة.
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
 
-**بيئة العمل (Desktop / Smartphone):**
- - نظام التشغيل (OS): [مثلاً: Windows, iOS]
- - المتصفح (Browser): [مثلاً: Chrome, Safari]
- - النسخة (Version): [مثلاً: 22]
+**Environment (please complete the following information):**
+ - OS: [e.g. iOS, Windows]
+ - Browser: [e.g. Chrome, Safari]
+ - Version: [e.g. 22]
 
-**سياق إضافي (Additional context)**
-أضف أي معلومات إضافية عن المشكلة هنا.
+**Additional context**
+Add any other context about the problem here.

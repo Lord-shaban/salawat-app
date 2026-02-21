@@ -1,23 +1,26 @@
-## وصف سريع للطلب (Description)
+## Description
 
-> أضف وصفاً واضحاً للتغييرات التي قمت بها في هذا الـ Pull Request. ما الذي يحله؟
+> Please include a summary of the changes and the related issue. Please also include relevant motivation and context.
 
-## نوع التعديل (Type of change)
+Fixes # (issue)
 
-يرجى وضع علامة `x` بجانب الخيار المناسب:
+## Type of change
 
-- [ ] إصلاح خطأ (Bug fix) - تعديل لا يؤثر على باقي المميزات الحالية ويحل مشكلة معينة.
-- [ ] إضافة ميزة (New feature) - إضافة خاصية جديدة للتطبيق.
-- [ ] تعديل جوهري كاسر (Breaking change) - تعديل في التصميم أو الأكواد قد يعطل بعض الميزات القديمة.
-- [ ] توثيق (Documentation update) - مجرد تحديث على ملفات القراءة مثل README وغيرها.
+Please delete options that are not relevant.
 
-## كيف تم اختبار هذا التعديل؟ (How Has This Been Tested?)
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] This change requires a documentation update
 
-يرجى وصف الخطوات التي اتخذتها لاختبار الكود والتأكد من عدم الإضرار بالأشياء الحالية (مثال: اختبرت زر العداد للتأكد من المزامنة الفعلية على Upstash Redis).
+## How Has This Been Tested?
 
-## الشروط والقواعد (Checklist):
+Please describe the tests that you ran to verify your changes. Explain how the real-time Upstash Redis connection handles this data.
 
-- [ ] لقد راجعت الكود الخاص بي بدقة.
-- [ ] الكود الخاص بي لا يُنتج أخطاء بعد الفحص بأمر `npm run lint`.
-- [ ] أضفت تعليقات توضيحية داخل الكود، خصوصاً للمناطق المعقدة.
-- [ ] قمت بتحديث ملفات التوثيق إذا لزم الأمر بحيث تتوافق مع الكود الجديد.
+## Checklist:
+
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation (e.g., `README.md`)
+- [ ] My changes generate no new ESLint warnings (`npm run lint`)

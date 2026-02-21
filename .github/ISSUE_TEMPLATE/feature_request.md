@@ -1,19 +1,20 @@
 ---
-name: طلب ميزة (Feature Request)
-about: اقترح علينا فكرة لميزة جديدة تضاف للتطبيق
+name: Feature Request
+about: Suggest an idea for this project
 title: "[FEATURE] "
 labels: enhancement
 assignees: ''
+
 ---
 
-**هل طلبك مرتبط بمشكلة تواجهها؟ يرجى الوصف.**
-وصف واضح وموجز للمشكلة التي تواجهها وتستدعي وجود هذه الميزة (مثال: أشعر دائماً بالانزعاج عندما أجد...)
+**Is your feature request related to a problem? Please describe.**
+A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
-**وصف الحل الذي تقترحه (Describe the solution you'd like)**
-وصف واضح للميزة أو التحسين الذي تفكر فيه وترغب برؤيته في التطبيق.
+**Describe the solution you'd like**
+A clear and concise description of what you want to happen.
 
-**وصف للبدائل التي أخذتها بالاعتبار (Describe alternatives you've considered)**
-وصف واضح وموجز للبدائل أو الحلول الأخرى الممكنة (إن وجدت).
+**Describe alternatives you've considered**
+A clear and concise description of any alternative solutions or features you've considered.
 
-**سياق إضافي (Additional context)**
-أضف معلومات إضافية للتوضيح أو لقطات شاشة (موك-اب) إذا كانت متوفرة.
+**Additional context**
+Add any other context or mockups about the feature request here.

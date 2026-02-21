@@ -1,0 +1,16 @@
+# To get started with Require updates to out-of-date npm dependencies, see:
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/about-dependabot-version-updates
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    # Check the npm registry for updates every week
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore"
+    reviewers:
+      # Optional: set reviewers
+      - "maintainers"
