@@ -1,128 +1,175 @@
 <div align="center">
-  <img src="public/globe.svg" alt="Salawat App Logo" width="120" />
+  <img src="public/globe.svg" alt="Salawat App Logo" width="150" />
 
-  # Salawat App 📿
+  # Salawat App - The Global Counter 📿
 
-  **A High-Performance, Real-Time Global Prayer Counter**
+  **An Enterprise-Grade, Hyper-Scalable, Real-Time Platform for Global Salawat Counting.**
 
-  [![Next.js](https://img.shields.io/badge/Next.js-15.0+-black?logo=next.js&logoColor=white)](#)
-  [![React](https://img.shields.io/badge/React-19-blue?logo=react&logoColor=white)](#)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css&logoColor=white)](#)
-  [![Redis](https://img.shields.io/badge/Upstash_Redis-DC382D?logo=redis&logoColor=white)](#)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![Next.js](https://img.shields.io/badge/Next.js-15.0+-black?style=for-the-badge&logo=next.js&logoColor=white)](#)
+  [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react&logoColor=white)](#)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
+  [![Upstash Redis](https://img.shields.io/badge/Upstash_Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](#)
+  [![Vercel Edge](https://img.shields.io/badge/Vercel_Edge-000000?style=for-the-badge&logo=vercel&logoColor=white)](#)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](http://makeapullrequest.com)
 
-  [Live Demo](https://salawat-app.vercel.app) · [Report Bug](https://github.com/your-username/salawat-app/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D+) · [Request Feature](https://github.com/your-username/salawat-app/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=%5BFEATURE%5D+)
+  [Live Demo](https://salawat-app.vercel.app) · [Documentation](#) · [Report Bug](https://github.com/your-username/salawat-app/issues/new) · [Request Feature](https://github.com/your-username/salawat-app/issues/new)
 </div>
+
+---
+
+## 📑 Table of Contents
+
+- [About The Project](#-about-the-project)
+  - [Mission & Vision](#mission--vision)
+  - [Scaling to Billions](#scaling-to-billions)
+- [Architecture Overview](#-architecture-overview)
+- [Tech Stack](#-tech-stack)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Standard Installation](#standard-installation)
+  - [Docker Installation](#docker-installation)
+- [Deployment](#-deployment)
+- [Roadmap](#-roadmap)
+- [Contributing](#-contributing)
+- [Governance & Support](#-governance--support)
+- [License](#-license)
 
 ---
 
 ## 📖 About The Project
 
-**Salawat App** is a highly scalable, real-time web application built with a noble purpose: to serve as a unified, global counter for sending blessings (Salawat) upon the Prophet Muhammad (Peace Be Upon Him).
+**Salawat App** is a state-of-the-art web application engineered to serve a singular, noble purpose: to act as a unified, real-time global counter for sending blessings (Salawat) upon the Prophet Muhammad (Peace Be Upon Him).
 
-Engineered to handle massive scale seamlessly, the architecture ensures zero downtime even with millions of concurrent users contributing billions of clicks simultaneously. By leveraging edge computing and in-memory databases, the synchronization happens in milliseconds across the globe.
+### Mission & Vision
+The mission is to connect millions of users worldwide in real-time, functioning not just as a counter, but as a robust platform that unites people globally through a synchronized spiritual action.
 
-### ✨ Key Features
+### Scaling to Billions
+Handling a massive influx of concurrent users clicking simultaneously requires an enterprise-level architecture. This repository is built around **Edge Computing** and **In-Memory Datastores (Redis)** to guarantee that millions of requests per second are processed with sub-millisecond latency, resulting in zero downtime and absolute data consistency.
 
-- **⚡ Blazing Fast Performance:** Fully optimized React 19 and Next.js 15+ App Router application.
-- **🌍 Real-Time Global Synchronization:** Utilizing Upstash Redis for instantaneous, highly concurrent database updates.
-- **🎨 Modern & Interactive UI:** Crafted with Tailwind CSS v4 and enhanced with smooth, physics-based animations via Framer Motion.
-- **🔄 Optimistic UI Updates:** SWR handles data fetching and mutation, ensuring the counter feels instant for the user while syncing reliably in the background.
-- **📱 Fully Responsive:** Carefully designed to provide an optimal experience across all devices, from desktop to mobile.
+---
+
+## 🏗 Architecture Overview
+
+```mermaid
+graph TD;
+    Client[Global Users / Browser] <-->|SWR Polling & Mutations| EdgeNetwork[Vercel Edge Network]
+    EdgeNetwork <-->|Next.js App Router API| Upstash[Upstash Global Redis]
+    Upstash -->|Atomic INCR Operations| Upstash
+```
+
+*For an in-depth dive into the system's architecture, data flow, and optimization strategies, please read our comprehensive [**ARCHITECTURE.md**](./ARCHITECTURE.md).*
+
+---
 
 ## 🛠 Tech Stack
 
-- **Framework:** [Next.js (App Router)](https://nextjs.org)
-- **UI Library:** [React 19](https://react.dev)
-- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Database / Cache:** [Upstash (Redis)](https://upstash.com/)
-- **Data Fetching:** [SWR (Stale-While-Revalidate)](https://swr.vercel.app/)
-- **Icons:** [Lucide React](https://lucide.dev/)
+Our stack is meticulously chosen to provide maximum performance and developer experience:
+
+- **Core Framework:** [Next.js 15+ (App Router)](https://nextjs.org) - Utilizing React Server Components and Edge functions.
+- **Frontend Library:** [React 19](https://react.dev) - Taking advantage of the latest concurrent rendering features.
+- **Styling Engine:** [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS for rapid, scalable UI construction.
+- **Animation Physics:** [Framer Motion](https://www.framer.com/motion/) - For liquid-smooth, GPU-accelerated micro-interactions.
+- **Primary Datastore:** [Upstash (Serverless Redis)](https://upstash.com/) - Providing sub-millisecond atomic operations globally.
+- **Data Synchronization:** [SWR (Stale-While-Revalidate)](https://swr.vercel.app/) - Ensuring optimistic UI updates and robust background syncing.
 
 ---
 
 ## 🚀 Getting Started
 
-To get a local copy up and running, follow these simple steps.
-
 ### Prerequisites
 
-Ensure you have Node.js (v18 or higher) and npm (or pnpm/yarn) installed on your machine.
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- Node.js > 18.x
+- npm or pnpm
+- An [Upstash](https://upstash.com/) Account (Free tier is sufficient for development)
 
-### Installation
+### Standard Installation
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/your-username/salawat-app.git
-   ```
-
-2. **Navigate into the project directory**
-   ```bash
    cd salawat-app
    ```
 
-3. **Install NPM packages**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-4. **Set up Environment Variables**
-   Create a `.env.local` file in the root directory and add your Upstash Redis credentials:
-   ```env
-   UPSTASH_REDIS_REST_URL="YOUR_UPSTASH_REST_URL"
-   UPSTASH_REDIS_REST_TOKEN="YOUR_UPSTASH_REST_TOKEN"
+3. **Configure Environment Variables**
+   Copy the example environment file and fill in your Upstash Redis credentials:
+   ```bash
+   cp .env.example .env.local
+   # Edit .env.local with your UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN
    ```
-   *Note: You can obtain these credentials by creating a free database on [Upstash](https://upstash.com/).*
 
-5. **Start the development server**
+4. **Run the development server**
    ```bash
    npm run dev
    ```
 
-6. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Docker Installation
+
+For an isolated development environment, you can use Docker:
+
+```bash
+docker-compose up --build
+```
+The App will be available at `http://localhost:3000`.
 
 ---
 
 ## 🚢 Deployment
 
-This project is optimized for deployment on [Vercel](https://vercel.com/):
+The optimal deployment target for this stack is the **Vercel Edge Network**, which ensures minimal latency globally.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/salawat-app)
+
+Alternatively, using the Vercel CLI:
 ```bash
 npm i -g vercel
 vercel
 ```
-*Don't forget to add your `.env` variables in the Vercel project settings.*
+
+---
+
+## 🗺 Roadmap
+
+- [x] Initial React 19 + Next.js 15 Setup
+- [x] Integrate Upstash Redis for atomic counting
+- [x] Setup Framer Motion & Tailwind v4 UI
+- [ ] Implement Global Leaderboards (Countries/Regions)
+- [ ] Implement Real-Time Websocket Fallbacks
+- [ ] Localization (L10n) & Internationalization (i18n) setup
+- [ ] Add Comprehensive Unit & E2E Testing (Jest / Cypress)
+- [ ] Mobile App Port (React Native / Expo)
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make to this noble cause are **greatly appreciated**.
+We welcome contributions from the global community. Whether it's adding a new feature, fixing a bug, or improving the documentation, your help is appreciated.
 
-Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started. Also, review our [Code of Conduct](CODE_OF_CONDUCT.md) to understand the standards we hold for our community.
-
-### Development Steps
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Please review our:
+- [**Contributing Guidelines**](CONTRIBUTING.md)
+- [**Code of Conduct**](CODE_OF_CONDUCT.md)
+- [**Security Policy**](SECURITY.md)
 
 ---
 
-## 🛡️ Security
+## 🏛 Governance & Support
 
-If you discover any security related issues, please refer to our [Security Policy](SECURITY.md) for reporting guidelines.
+- Technical documentation and architectural decisions are logged in [**ARCHITECTURE.md**](ARCHITECTURE.md).
+- If you need help or have questions, please read [**SUPPORT.md**](SUPPORT.md).
+- To understand how the project is managed, see [**GOVERNANCE.md**](GOVERNANCE.md).
+
+---
 
 ## 📄 License
 
-Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
+This repository is distributed under the MIT License. See the [`LICENSE`](LICENSE) file for more information.
 
-## 🌟 Acknowledgements
-
-May Allah accept this effort and reward everyone who contributes to or uses this application.
+---
+<div align="center">
+  <i>Made with 🤍 for the global community.</i>
+</div>

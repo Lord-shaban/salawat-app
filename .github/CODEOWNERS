@@ -1,0 +1,15 @@
+# These owners will be the default owners for everything in the repo.
+*       @your-username
+
+# Order is important; the last matching pattern takes the most precedence.
+
+# Define owners for the core React source code.
+/src/               @your-username
+
+# Define owners for infrastructure and architectural decisions.
+/ARCHITECTURE.md    @your-username
+/docker-compose.yml @your-username
+/Dockerfile         @your-username
+
+# Define owners for GitHub workflows and CI/CD.
+/.github/workflows/ @your-username
