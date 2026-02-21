@@ -6,11 +6,11 @@
 
   # 🕌 Salawat App: Global Real-Time Counter
 
-  **An Enterprise-Grade, Hyper-Scalable Platform for Synchronized Global Action**
+  **An Enterprise-Grade, Hyper-Scalable Platform for Synchronized Global Action.**
 
   <p align="center">
     <a href="https://github.com/your-username/salawat-app/actions/workflows/ci.yml">
-      <img src="https://img.shields.io/github/actions/workflow/status/your-username/salawat-app/ci.yml?branch=main&style=for-the-badge&logo=github" alt="Build Status" />
+      <img src="https://img.shields.io/github/actions/workflow/status/your-username/salawat-app/ci.yml?branch=main&style=for-the-badge&logo=github&label=Build" alt="Build Status" />
     </a>
     <a href="https://nextjs.org/">
       <img src="https://img.shields.io/badge/Next.js-15.0+-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
@@ -24,7 +24,9 @@
     <a href="https://tailwindcss.com/">
       <img src="https://img.shields.io/badge/Tailwind-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
     </a>
-    <br />
+  </p>
+  
+  <p align="center">
     <a href="https://opensource.org/licenses/MIT">
       <img src="https://img.shields.io/github/license/your-username/salawat-app?style=flat-square&color=yellow" alt="License: MIT" />
     </a>
@@ -37,6 +39,9 @@
     <a href="http://makeapullrequest.com">
       <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" />
     </a>
+    <a href="https://github.com/your-username/salawat-app/stargazers">
+      <img src="https://img.shields.io/github/stars/your-username/salawat-app?style=flat-square" alt="Stars" />
+    </a>
   </p>
 
   <p align="center">
@@ -47,7 +52,7 @@
   </p>
 </div>
 
-<hr />
+***
 
 ## 📑 Table of Contents
 <details>
@@ -58,7 +63,7 @@
   - [The Engineering Challenge](#the-engineering-challenge)
 - [2. System Architecture](#-system-architecture)
 - [3. Key Features](#-key-features)
-- [4. Performance Metrics](#-performance-metrics)
+- [4. Project Structure](#-project-structure)
 - [5. Installation & Setup](#-installation--setup)
 - [6. Documentation](#-documentation)
 - [7. Community & Governance](#-community--governance)
@@ -92,7 +97,7 @@ graph LR;
     subgraph Vercel Edge Network
     B -->|Stateless HTTP POST| C{Upstash Redis};
     end
-    C -->|INCRBY 1| C;
+    C -->|INCRBY Batch| C;
 ```
 
 ---
@@ -105,19 +110,31 @@ graph LR;
 | **Optimistic UX** | The counter increments instantly for the user, hiding network latency. | `SWR Mutations` |
 | **Physics UI** | Fluid, GPU-accelerated micro-animations on user interactions. | `Framer Motion` |
 | **Global Deployment** | Functions run in data centers closest to the user's origin. | `Vercel Edge` |
-| **Zero-Bundle CSS** | Utilizing the latest generation of utility styling. | `Tailwind v4` |
+| **Zero-Bundle CSS** | Utilizing the latest generation of utility styling. | `Tailwind CSS v4` |
 
 ---
 
-## ⚡ Performance Metrics
+## 📁 Project Structure
 
-Our rigorous tech stack selection yields perfect Lighthouse scores out of the box.
+Our repository follows a highly modular, enterprise-standard structure:
 
-* **FCP (First Contentful Paint):** `< 400ms`
-* **TTI (Time to Interactive):** `< 600ms`
-* **Latency (API to Redis via REST):** `~3-5ms (p99)`
-
-*(Detailed optimization strategies available in [Performance Documentation](docs/PERFORMANCE.md))*
+```text
+salawat-app/
+├── .github/                # GitHub Actions, Issue Templates, Dependabot config
+├── docs/                   # Detailed architectural & operational documentations
+│   ├── ARCHITECTURE.md     # Engineering decisions
+│   ├── STATE_MANAGEMENT.md # SWR vs Redux rationale
+│   └── ...                 
+├── public/                 # Static assets (fonts, icons, SVGs)
+├── src/
+│   ├── app/                # Next.js 15 App Router directory (Pages & API)
+│   ├── components/         # Reusable React UI components (Counter, Motion UI)
+│   ├── hooks/              # Custom React Hooks
+│   └── styles/             # Global CSS and Tailwind directives
+├── docker-compose.yml      # Local container orchestration
+├── Dockerfile              # Multi-stage production image build
+└── package.json            # Project dependencies & scripts
+```
 
 ---
 
@@ -154,6 +171,7 @@ For completely isolated environments:
 ```bash
 docker-compose up --build
 ```
+*(App will be exposed on port `3000`)*
 
 ---
 
@@ -162,16 +180,19 @@ docker-compose up --build
 Dive deeper into our project's internals using the specialized guides below:
 
 - **[Architecture & Systems Design](docs/ARCHITECTURE.md)**
+- **[State Management Strategy](docs/STATE_MANAGEMENT.md)**
+- **[Performance & Scaling Strategy](docs/PERFORMANCE.md)**
 - **[Deployment Guide](docs/DEPLOYMENT.md)**
 - **[API Reference](docs/API_REFERENCE.md)**
-- **[Performance & Scaling Strategy](docs/PERFORMANCE.md)**
+- **[Localization (Upcoming)](docs/LOCALIZATION.md)**
 - **[Testing Guidelines](docs/TESTING.md)** *(Coming Soon)*
 
 ---
 
 ## 🏛 Community & Governance
 
-This project is open-source and community-driven.
+This project is open-source and community-driven. All decisions are transparent.
+
 - **[Code of Conduct](CODE_OF_CONDUCT.md)**: We enforce a strict, welcoming environment.
 - **[Governance Model](GOVERNANCE.md)**: How decisions are made.
 - **[Maintainers](MAINTAINERS.md)**: Meet the core team.
@@ -189,20 +210,33 @@ We heartily welcome Pull Requests. Whether it is a typo, a bug-fix, or a massive
 4. Push to the Branch: `git push origin feat/AmazingFeature`
 5. Open a Pull Request adhering to our [PR Template](.github/PULL_REQUEST_TEMPLATE.md).
 
+*Our CI/CD pipeline and GitHub Actions (`labeler`, `dependabot`, `stale`) will automatically tag and test your PR.*
 *Please ensure you review the [Contributing Guidelines](CONTRIBUTING.md) before pushing.*
+
+---
+
+## ✨ Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<a href="https://github.com/your-username/salawat-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=your-username/salawat-app" alt="Contributors" />
+</a>
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ---
 
 ## 💖 Backers & Sponsors
 
-This project is currently maintained voluntarily by independent developers. If you wish to sponsor server costs (Vercel/Upstash quotas) as the app scales globally, please check our [Sponsors Page](#) or the `FUNDING.yml` configuration.
+This project is currently maintained voluntarily by independent developers. If you wish to sponsor server costs (Vercel/Upstash quotas) as the app scales globally, please check our [Sponsors Page](#) or the `FUNDING.yml` configuration in this repository.
 
 ---
 
 <div align="center">
   <br />
-  <code>Built with Next.js & React 19</code><br />
+  <code>Built with Next.js 15 & React 19</code><br />
   Distributed under the MIT License. See <code><a href="./LICENSE">LICENSE</a></code> for more information.
   <br /><br />
-  ⭐⭐⭐ <i>If you like this project, please star the repository!</i> ⭐⭐⭐
+  ⭐⭐⭐ <i>If you appreciate the engineering behind this project, please consider giving it a Star!</i> ⭐⭐⭐
 </div>

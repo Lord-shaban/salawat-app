@@ -1,0 +1,34 @@
+# .github/labeler.yml
+# Configure the PR labeler based on file changes
+
+# Add 'area: frontend' label if changes match
+area: frontend:
+  - changed-files:
+      - any-glob-to-any-file: 'src/app/**/*'
+      - any-glob-to-any-file: 'src/components/**/*'
+      - any-glob-to-any-file: 'src/styles/**/*'
+
+# Add 'area: backend/api' label if changes match
+area: backend/api:
+  - changed-files:
+      - any-glob-to-any-file: 'src/app/api/**/*'
+
+# Add 'area: documentation' label if changes match
+area: documentation:
+  - changed-files:
+      - any-glob-to-any-file: '*.md'
+      - any-glob-to-any-file: 'docs/**/*'
+
+# Add 'area: devops' label if changes match
+area: devops:
+  - changed-files:
+      - any-glob-to-any-file: '.github/**/*'
+      - any-glob-to-any-file: 'Dockerfile'
+      - any-glob-to-any-file: 'docker-compose.yml'
+
+# Add 'area: styling' label if changes match
+area: styling:
+  - changed-files:
+      - any-glob-to-any-file: 'tailwind.config*'
+      - any-glob-to-any-file: 'postcss.config*'
+      - any-glob-to-any-file: '**/*.css'
