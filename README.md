@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# تطبيق الصلوات المليارية (Salawat App) 📿
 
-## Getting Started
+تطبيق ويب عالمي حديث مبني لغرض نبيل: إنشاء عداد عالمي ضخم ومستقر للصلوات على النبي محمد ﷺ. تم تصميم البنية التحتية للتطبيق بحيث يكون قادراً على استيعاب ملايين الزوار ومليارات الصلوات في وقت واحد وبدون توقف (Downtime).
 
-First, run the development server:
+## ✨ المميزات الأساسية
+- **أداء فائق**: واجهة تفاعلية سريعة مبنية بشكل كامل باستخدام مكتبات React 19 و Next.js 16.
+- **حفظ لحظي وسريع (Real-time & High Scale)**: الاستعانة بـ `Upstash Redis` (قاعدة بيانات في الذاكرة) للتعامل وتزامن ملايين الضغطات في أجزاء من الثانية.
+- **تصميم عصري وتفاعلي**: بناء واجهات جذابة ومريحة للعين باستخدام `Tailwind CSS v4` وإضافة تأثيرات حركية متناغمة بواسطة `Framer Motion`.
+- **مزامنة البيانات**: استخدام `SWR` لمزامنة العداد بين ملايين المستخدمين في شتى أنحاء العالم لضمان بقاء الرقم دقيقاً للجميع.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠 التقنيات المستخدمة
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Next.js (App Router)](https://nextjs.org) - إطار العمل
+- [React 19](https://react.dev) - واجهات المستخدم
+- [Upstash Redis](https://upstash.com/) - لتخزين وحساب العدادات بسرعة هائلة
+- [Tailwind CSS v4](https://tailwindcss.com/) - لتنسيق الواجهات
+- [Framer Motion](https://www.framer.com/motion/) - للأنيميشن
+- [Lucide React](https://lucide.dev/) - أيقونات التطبيق
+- [SWR](https://swr.vercel.app/) - جلب وتحديث البيانات
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 كيفية تشغيل المشروع محلياً
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **استنساخ المستودع (Clone):**
+   ```bash
+   git clone https://github.com/your-username/salawat-app.git
+   ```
 
-## Learn More
+2. **تثبيت الحزم (Install Dependencies):**
+   ```bash
+   cd salawat-app
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **إعداد متغيرات البيئة:**
+   قم بإنشاء ملف `.env.local` في الجذر الرئيسي للمشروع، وأضف فيه مفاتيح Upstash الخاصة بك:
+   ```env
+   UPSTASH_REDIS_REST_URL="YOUR_UPSTASH_URL"
+   UPSTASH_REDIS_REST_TOKEN="YOUR_UPSTASH_TOKEN"
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **تشغيل الخادم المحلي:**
+   ```bash
+   npm run dev
+   ```
+   سيتم تشغيل التطبيق على الرابط: `http://localhost:3000`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 المشاركة في التطوير
+إذا أردت المساهمة لتطوير هذا التطبيق لكسب الأجر والمشاركة في هذا العمل، يرجى قراءة ملف [CONTRIBUTING.md](./CONTRIBUTING.md) لمعرفة الخطوات الصحيحة.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 الترخيص (License)
+هذا المشروع مفتوح المصدر وتحت رخصة [MIT License](./LICENSE).
